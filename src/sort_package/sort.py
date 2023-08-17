@@ -48,11 +48,9 @@ class Sort:
         # Repeatedly merge sublists to produce new sorted sublists until there is 
         # only one sublist remaining. This will be the sorted list.
         if len(array) == 1:
-            print(array)
             return array
         else:
             cut = len(array)/2
-            print('indo fazer o merge com o cut ', cut)
             return self.__merge(self.merge_sort(array[:cut]), self.merge_sort(array[cut:]))
 
     def __merge(self, list1, list2):
