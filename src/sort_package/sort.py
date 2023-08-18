@@ -89,6 +89,22 @@ class Sort:
         if index2 < len(list2):
             sorted_list.extend(list2[index2:])
         return sorted_list
+    
+    def bubble_sort(self):
+        print(self.list)
+        swap = True
+        aux = 0
+        while(swap):
+            swap = False
+            for i in range(0, len(self.list) - 1 - aux):
+                if self.list[i] > self.list[i+1]:
+                    swap = True
+                    self.__swap_elements(self.list, i, i+1)
+            print(self.list)
+            aux += 1
+        return self.list
+
+
 
 # 2 4 6
 # 3 5 7
