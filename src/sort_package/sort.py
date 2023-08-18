@@ -53,6 +53,23 @@ class Sort:
             cut = len(array)/2
             return self.__merge(self.merge_sort(array[:cut]), self.merge_sort(array[cut:]))
 
+    def merge_sort_2(self):
+        divided_list = []
+        merged_list = []
+        for e in self.list:
+            divided_list.append([e])
+        
+        while(len(divided_list) > 1):
+            merged_list = []
+            for i in range(0, len(divided_list), 2):
+                if i == len(divided_list)-1:
+                    merged = divided_list[i]
+                else:
+                    merged = self.__merge(divided_list[i], divided_list[i+1])
+                merged_list.append(merged)
+            divided_list = merged_list
+        return divided_list[0]
+            
     def __merge(self, list1, list2):
         # Given two sorted lists, merge then into a sorted list
         index1 = 0

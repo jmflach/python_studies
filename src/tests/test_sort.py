@@ -78,5 +78,11 @@ class TestSort(unittest.TestCase):
         result = sorter.merge_sort(data)
         self.assertEqual(result, [0,1,2,3,4,5,6,7,8,9])
 
+    def test_merge_sort_2(self):
+        data = [1,3,2,6,4,0,9,8,7,5]
+        sorter = Sort(data)
+        result = sorter.merge_sort_2()
+        self.assertEqual(result, [0,1,2,3,4,5,6,7,8,9])
+
 if __name__ == '__main__':
     unittest.main()
