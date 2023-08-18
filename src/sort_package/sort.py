@@ -91,7 +91,6 @@ class Sort:
         return sorted_list
     
     def bubble_sort(self):
-        print(self.list)
         swap = True
         aux = 0
         while(swap):
@@ -100,9 +99,19 @@ class Sort:
                 if self.list[i] > self.list[i+1]:
                     swap = True
                     self.__swap_elements(self.list, i, i+1)
-            print(self.list)
             aux += 1
         return self.list
+    
+    def quick_sort(self, array):
+        if len(array) < 2:
+            return array
+        else:
+            pivot = array[0]
+            array.pop(0)
+            min = filter(lambda x: x <= pivot, array)
+            max = filter(lambda x: x > pivot, array)
+            return self.quick_sort(min) + [pivot] + self.quick_sort(max)
+
 
 
 
